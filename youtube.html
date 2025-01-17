@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tadeas Tolver | YouTube</title>
+        <link rel="stylesheet" href="foundation.css"/>
+        <link rel="stylesheet" href="youtube.css"/>
+    </head>
+    <body>
+        <nav>
+          <a class="nav-link" id="nav-link1" href="domu.html">Domů</a>
+          <a class="nav-link" id="nav-link2" href="youtube.html">YouTube</a>
+          <a class="nav-link" id="nav-link3" href="dobro.html">Vylepšovač karmy</a>
+        </nav>
+        
+        <h1 class="title"><span style="color: #FF0000;">YouTube</span> Tadeas Tolver</h1>
+        
+        <div>
+            <button id="search-button">🔎</button>
+            <input type="search" id="yt-search" name="" placeholder="Hledejte videa">
+        </div>
+        
+        <div id="order-select-and-label">
+            <label for="order" id="label-for-order">Řazení:</label>
+            <select name="order" id="order-select">
+              <option id="newest">🕒 Nejnovější.</option>
+              <option id="viewest">👁️ Nejvzhlédnutější.</option>
+            </select>
+        </div>
+        
+        <h3 id="no-results" style="display: none;">No results found.</h3>
+        
+        <div id="long-videos-con">
+
+        </div>
+        
+        <div id="shorts-con">
+        </div>
+        
+    <script type="module" src="youtube.js"></script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+.jmeno {
+    font-size: 40px;
+    margin-top: 80px;
+    
+}
+
+#main-p {
+    font-size: 20px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#cesky, #english, #espanol {
+    border-radius: none;
+    border: 1px solid #19660d;
+    background-color: white;   
+}
+
+#cesky, #english {
+    margin-right: 5px;
+}
+
+#buttons-div {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    top: 160px;
+}
+
+
+
+.contact-div {
+    font-size: 15px;
+    margin-left: 5vw;
+    margin-right: 5vw; 
+    margin-bottom: 30px;
+}
+
+#nav-link1{
+    text-decoration: underline white 5px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto; 
+    overflow: hidden;
+}
+
+.slider img {
+    object-fit: cover;
+    width: 100%;
+    display: none;
+    height: 200px;
+}  
+
+.slide-btn {
+    position: absolute;
+    top: 90px;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    border-top: 2px solid black;
+}
+
+.prev-btn {
+    left: 15px;
+    border-left: 2px solid black;
+}
+
+.next-btn {
+    right: 15px;
+    border-right: 2px solid black;
+}
+
+.prev-btn:active {
+    border-left: 1px solid black;
+    border-top: 1px solid black;  
+}
+
+.next-btn:active {
+    border-right: 1px solid black;
+    border-top: 1px solid black;  
+}
+
+
+@media screen and (max-width: 400px) {
+
+    .jmeno {
+        font-size: 30px;
+    }
+    
+    #buttons-div {
+        top: 140px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
