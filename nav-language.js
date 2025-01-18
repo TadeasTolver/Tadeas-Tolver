@@ -8,7 +8,7 @@ export function setNavEnglish() {
 
 export function setNavSpanish() {
     home.innerHTML = "Casa";
-    good.innerHTML = "+ karma";
+    good.innerHTML = "Quiero más karma";
 } 
 
 export function setNavCzech() {
