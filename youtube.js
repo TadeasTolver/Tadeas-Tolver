@@ -1,7 +1,21 @@
 import {setNavEnglish, setNavSpanish, setNavCzech} from "./nav-language.js";
 
 const videos = [
-    [
+    [    
+        {
+            name: "Grónská PARODIE",
+            tags: ["parodie", "nohavica", "gronska", "gronsko"],
+            format: "long-video",
+            url: "https://www.youtube.com/watch?v=3WOsehrd7-A",
+            thumbnail: "https://i.ytimg.com/vi/3WOsehrd7-A/hqdefault.jpg?sqp=-oaymwFBCNACELwBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AG0B4AC0AWKAgwIABABGH8gQSgVMA8=&rs=AOn4CLAdPcx3P35c8sWJ8I16RU3cYs0YXw",
+            published: 250529,
+            views: 10,
+            description: {
+                cz: "Vtipná parodie písničky od Jaromíra Nohavicy jménem Grósnká písnička. Video obsahuje originální video písné a přidané, humoristické, krátké pasáže z internetu.",
+                en: "Funny parody of the song 'Grósnká písnička' (Greenlandic Song) by Jaromír Nohavica. The video contains the original song video and added, humorous, short passages from the internet.",
+                es: "Un vídeo muy divertido y un poco loco. Es un parodia de la canción 'Grósnká písnička' (Canción groenladesa) de Jaromír Nohavica."
+            }
+         }, 
          {
             name: "CHALLENGE, VYDRŽ 24 HODIN V DIVOČINĚ!",
             format: "long-video",
@@ -45,7 +59,7 @@ const videos = [
                 en: "Very poor quality video, shot in Qaqortoq, South Greenland 2023.",
                 es: "Un vídeo con muy mala calidad, Sur Groenlandica 2023."
             }
-        } 
+        }
     ], 
 
     [
