@@ -8,7 +8,7 @@ const mainPtext = {
     ` ,
     en: `
     Welcome to my website.<br>
-    If you want to read description of my videos, or you want to support the good, you are in the right place. I hope this website is more proffesional
+    If you want to read a description of my videos, or you want to support the good, you are in the right place. I hope this website is more proffesional
     than the previous one.
     `,
     es:
