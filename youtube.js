@@ -13,7 +13,7 @@ const videos = [
             description: {
                 cz: "Vtipná parodie písničky od Jaromíra Nohavicy jménem Grósnká písnička. Video obsahuje originální video písné a přidané, humoristické, krátké pasáže z internetu.",
                 en: "Funny parody of the song 'Grósnká písnička' (Greenlandic Song) by Jaromír Nohavica. The video contains the original song video and added, humorous, short passages from the internet.",
-                es: "Un vídeo muy divertido y un poco loco. Es un parodia de la canción 'Grósnká písnička' (Canción groenladesa) de Jaromír Nohavica."
+                es: "Un vídeo muy divertido y un poco loco. Es una parodia de la canción 'Grósnká písnička' (Canción groenladesa) de Jaromír Nohavica."
             }
          }, 
          {
