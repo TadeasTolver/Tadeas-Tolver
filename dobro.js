@@ -42,7 +42,7 @@ function setSpanish() {
     supportLocalBtn.onclick = () => {
         window.location.href = "https://www.wwf.es/";
     };
-    dontLikeNatureBtn.innerHTML = "No gusto los animales";
+    dontLikeNatureBtn.innerHTML = "No me gusto los animales";
     headtitle.innerHTML = "Tadeas Tolver | + karma";
     
     setNavSpanish();
