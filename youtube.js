@@ -329,7 +329,7 @@ const bubbleSort = (array, data) => {
 };
 
 async function getViews(videoId) {
-  const apiKey = 'YOUR_API_KEY'; // Replace with your real key
+  const apiKey = 'AIzaSyAuayuzV6BxekZTH6rjqcrLyHJwvPh9Q6M';
   const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`;
   
   const response = await fetch(url);
