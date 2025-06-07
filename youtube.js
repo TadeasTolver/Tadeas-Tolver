@@ -345,7 +345,7 @@ async function getViews(videoId) {
 }
 
 
-getViews("3WOsehrd7-A").then(views => {console.log(views});
+getViews("3WOsehrd7-A").then(views => {console.log(views)});
 
 function renderVideos() {
     let order = document.querySelector("#order-select").value;
