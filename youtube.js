@@ -1,4 +1,4 @@
-console.log("niggar")
+console.log("trigger")
 
 
 
@@ -328,6 +328,7 @@ const bubbleSort = (array, data) => {
     }
 };
 
+
 async function getViews(videoId) {
   const apiKey = 'AIzaSyAuayuzV6BxekZTH6rjqcrLyHJwvPh9Q6M';
   const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`;
@@ -337,15 +338,17 @@ async function getViews(videoId) {
   
   if (data.items && data.items.length > 0) {
     const views = data.items[0].statistics.viewCount;
-    console.log(`Views: ${views}`);
     return views;
   } else {
     throw new Error("Video not found or invalid API key.");
   }
 }
 
+async function getViewsNum(videoUrl) {
+    return await getViews(videoUrl.slice(-11));
+}
 
-getViews("3WOsehrd7-A").then(views => {console.log(views)});
+console.log(getViewsNum("https://www.youtube.com/watch?v=3WOsehrd7-A"));
 
 function renderVideos() {
     let order = document.querySelector("#order-select").value;
