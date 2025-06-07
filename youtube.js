@@ -191,13 +191,13 @@ const videos = [
             name: "Dog hunting mice",
             tags: ["dog", "mice", "animals", "vysočina", "písečné"],
             format: "short",
-            url: "https://www.youtube.com/shorts/hPVRGMevKCk",
+            url: "https://www.keysigns.co.uk/images/no-access-signs-p1310-40478_zoom.jpg",
             thumbnail: "https://i.ytimg.com/vi/hPVRGMevKCk/oar2.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLB3XMHlcDNHunydLJDRix60_XTY9w",
             published: 240719,
             views: 520,
             description: {
-                cz: "Video jak pes loví miši na Vsočině.",
-                en: "Video of dog hunting mice in Vysočina.",
+                cz: "Video jak pes loví miši na Vysočině.",
+                en: "Video of a dog hunting mice in Vysočina.",
                 es: "Vídeo de un perro de caza."
             }
         },
