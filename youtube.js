@@ -1,4 +1,4 @@
-console.log("trgrbtgiutbgutbgyutbguytbguyrtbguytrbguytrbuytrbuyrb")
+console.log("nigger")
 
 
 
