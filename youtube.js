@@ -329,19 +329,21 @@ const bubbleSort = (array, data) => {
 };
 
 async function getViews(videoId) {
-    const apiKey = "AIzaSyAuayuzV6BxekZTH6rjqcrLyHJwvPh9Q6M";
-    const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (data.items && data.items.length > 0) {
-        const views = data.items[0].statistics.viewCount;
-        return views;
-    } else {
-        throw new Error("Not found.");
-    }
+  const apiKey = 'YOUR_API_KEY'; // Replace with your real key
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`;
+  
+  const response = await fetch(url);
+  const data = await response.json();
+  
+  if (data.items && data.items.length > 0) {
+    const views = data.items[0].statistics.viewCount;
+    console.log(`Views: ${views}`);
+    return views;
+  } else {
+    throw new Error("Video not found or invalid API key.");
+  }
 }
+
 
 console.log(getViews("3WOsehrd7-A"));
 
