@@ -1,3 +1,7 @@
+console.log("trgrbtgiutbgutbgyutbguytbguyrtbguytrbguytrbuytrbuyrb")
+
+
+
 import {setNavEnglish, setNavSpanish, setNavCzech} from "./nav-language.js";
 
 const videos = [
@@ -324,6 +328,22 @@ const bubbleSort = (array, data) => {
     }
 };
 
+async function getViews(videoId) {
+    const apiKey = "AIzaSyAuayuzV6BxekZTH6rjqcrLyHJwvPh9Q6M";
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.items && data.items.length > 0) {
+        const views = data.items.statistics.viewCount;
+        return views;
+    } else {
+        throw new Error("Not found.");
+    }
+}
+
+console.log(getViews("3WOsehrd7-A"));
 
 function renderVideos() {
     let order = document.querySelector("#order-select").value;
