@@ -336,7 +336,7 @@ async function getViews(videoId) {
     const data = await response.json();
 
     if (data.items && data.items.length > 0) {
-        const views = data.items.statistics.viewCount;
+        const views = data.items[0].statistics.viewCount;
         return views;
     } else {
         throw new Error("Not found.");
