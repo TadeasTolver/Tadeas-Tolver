@@ -1,7 +1,3 @@
-console.log("trigger")
-
-
-
 import {setNavEnglish, setNavSpanish, setNavCzech} from "./nav-language.js";
 
 const videos = [
