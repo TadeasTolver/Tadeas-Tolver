@@ -1,4 +1,4 @@
-console.log("nigga")
+console.log("niggi")
 
 
 
