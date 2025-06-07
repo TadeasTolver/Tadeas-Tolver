@@ -1,4 +1,4 @@
-console.log("niggi")
+console.log("niggar")
 
 
 
@@ -345,7 +345,7 @@ async function getViews(videoId) {
 }
 
 
-console.log(getViews("3WOsehrd7-A"));
+getViews("3WOsehrd7-A").then(views => {console.log(views});
 
 function renderVideos() {
     let order = document.querySelector("#order-select").value;
