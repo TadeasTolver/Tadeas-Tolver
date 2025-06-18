@@ -23,7 +23,7 @@ const videos = [
             url: "https://www.youtube.com/watch?v=fH6_QwWP8s8",
             thumbnail: "https://i.ytimg.com/vi/fH6_QwWP8s8/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDcOarie59sfW1Co4sphsN3HZZUoQ", 
             published: 240722,
-            views: 70,
+            views: 85,
             description: {
                 cz: "Toto video bylo natočeno v Bezkydech v roce 2024. Jedná se o parodii. Kvalita není nejlepší, protože video bylo natočeno a sestříháno na telefonu.",
                 en: "This video was shot in Bezkydy in 2024. It's a parody. The quality is not the best, because the video was shot and edited on a phone. ",
@@ -69,8 +69,8 @@ const videos = [
             format: "short",
             url: "https://www.youtube.com/shorts/Lr4zL5Qg_jM",
             thumbnail: "https://i.ytimg.com/vi/Lr4zL5Qg_jM/oar2.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLDCj8K5aYN19HRMqoyFC7cXrY3UYA",
-            published: 240809,
             views: 580,
+            published: 240809,
             description: {
               cz: "Toto video ukazuje jak otravný design má Duolingo.",
               en: "This video shows the annoying design of Duolingo.",
@@ -187,8 +187,8 @@ const videos = [
             name: "Dog hunting mice",
             tags: ["dog", "mice", "animals", "vysočina", "písečné"],
             format: "short",
-            url: "https://www.keysigns.co.uk/images/no-access-signs-p1310-40478_zoom.jpg",
-            thumbnail: "https://i.ytimg.com/vi/hPVRGMevKCk/oar2.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLB3XMHlcDNHunydLJDRix60_XTY9w",
+            url: "https://www.youtube.com/watch?v=8M8H24A40_o",
+            thumbnail: "https://s3.amazonaws.com/images.seroundtable.com/youtube-404-1409831247.png",
             published: 240719,
             views: 520,
             description: {
@@ -217,8 +217,8 @@ const videos = [
             name: "První lesní žebrák v ČR.",
             tags: [],
             format: "short",
-            url: "https://www.keysigns.co.uk/images/no-access-signs-p1310-40478_zoom.jpg",
-            thumbnail: "https://imgur.com/Pjj696b.jpg",
+            url: "https://www.youtube.com/watch?v=8M8H24A40_o",
+            thumbnail: "https://s3.amazonaws.com/images.seroundtable.com/youtube-404-1409831247.png",
             published: 207,
             views: 0,
             description: {
@@ -263,7 +263,7 @@ const videos = [
             tags: ["dog"],
             format: "short",
             url: "https://www.youtube.com/shorts/8M8H24A40_o",
-            thumbnail: "https://imgur.com/M7XvA0T.jpg",
+            thumbnail: "https://s3.amazonaws.com/images.seroundtable.com/youtube-404-1409831247.png",
             published: 241103,
             views: 520,
             description: {
@@ -274,6 +274,50 @@ const videos = [
         }
     ]
 ];
+
+
+async function getViews(videoUrl) {
+    const videoId = videoUrl.slice(-11);
+    const apiKey = "AIzaSyAuayuzV6BxekZTH6rjqcrLyHJwvPh9Q6M";
+    const endpoint = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`
+
+    try {
+        const response = await fetch(endpoint);
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+            const viewCount = data.items[0].statistics.viewCount;
+            return parseInt(viewCount, 10);
+        } else {
+            console.log("Video not found.");
+            return null;
+        }
+    } catch (error) {
+        console.log("Error. Video not found.");
+        return null;
+    } 
+}
+
+getViews("https://www.youtube.com/watch?v=3WOsehrd7-A").then(views => {
+    if (views !== null) {
+        console.log(views);
+    }
+}); 
+
+videos.forEach(section => {
+    section.forEach(video => {
+        getViews(video.url).then(views => {
+            if (views !== null) {
+                video.views = views;
+                console.log(video.name);
+                console.log(video.views);
+            }
+        }); 
+    });
+});
+
+console.log(videos[1]);
+
 
 const longVideosCon = document.querySelector("#long-videos-con");
 const shortsCon = document.querySelector("#shorts-con");
@@ -307,7 +351,6 @@ if (language === "en") {
 }
 
 
-
 const bubbleSort = (array, data) => {
     const len = array.length;
     
@@ -324,27 +367,6 @@ const bubbleSort = (array, data) => {
     }
 };
 
-
-async function getViews(videoId) {
-  const apiKey = 'AIzaSyAuayuzV6BxekZTH6rjqcrLyHJwvPh9Q6M';
-  const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${apiKey}`;
-  
-  const response = await fetch(url);
-  const data = await response.json();
-  
-  if (data.items && data.items.length > 0) {
-    const views = data.items[0].statistics.viewCount;
-    return views;
-  } else {
-    throw new Error("Video not found or invalid API key.");
-  }
-}
-
-async function getViewsNum(videoUrl) {
-    return await getViews(videoUrl.slice(-11));
-}
-
-console.log(getViewsNum("https://www.youtube.com/watch?v=3WOsehrd7-A"));
 
 function renderVideos() {
     let order = document.querySelector("#order-select").value;
@@ -423,6 +445,5 @@ ytSearch.addEventListener("keyup", () => {
 searchButton.addEventListener("click", () => {
     searchFunction();
 });
-
 
 
